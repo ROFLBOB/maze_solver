@@ -30,6 +30,10 @@ def main():
     c5 = Cell(win)
     c5.draw(300, 100, 350, 150)
 
+    c.draw_move(c2)
+    c3.draw_move(c4)
+    c.draw_move(c5)
+
     win.wait_for_close()
 
 

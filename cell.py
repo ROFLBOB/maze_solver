@@ -32,4 +32,23 @@ class Cell():
             bottom_line = Line(Point(x1, y2), Point(x2, y2))
             self.__win.draw_line(bottom_line)
 
+    def get_center(self):
+        center_x = self.__x1 + (self.__x2 - self.__x1) / 2
+        center_y = self.__y1 + (self.__y2 - self.__y) / 2
+        #returns the x and y coordinates of the center of the cell
+        return Point(center_x,center_y)
+
+    def draw_move(self, to_cell, undo=False):
+        #get cell center as Point
+        center = self.get_center()
+        
+        #create the line as a variable
+        line = Line(center, to_cell.get_center())
+        if undo==False:
+            #draw red line
+            self.__win.draw_line(line, "red")
             
+
+        else:
+            #draw gray line
+            self.__win.draw_line(line, "gray")
