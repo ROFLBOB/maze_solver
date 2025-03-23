@@ -25,25 +25,25 @@ class Cell():
                 self.__win.draw_line(left_line)
             else:
                 left_line = Line(Point(x1, y1), Point(x1, y2))
-                self.__win.draw_line(left_line, color="white")
+                self.__win.draw_line(left_line, fill_color="white")
             if self.has_top_wall:
                 top_line = Line(Point(x1, y1), Point(x2, y1))
                 self.__win.draw_line(top_line)
             else:
                 top_line = Line(Point(x1, y1), Point(x2, y1))
-                self.__win.draw_line(top_line, color="white")
+                self.__win.draw_line(top_line, fill_color="white")
             if self.has_right_wall:
                 right_line = Line(Point(x2, y1), Point(x2, y2))
                 self.__win.draw_line(right_line)
             else:
                 right_line = Line(Point(x2, y1), Point(x2, y2))
-                self.__win.draw_line(right_line, color="white")
+                self.__win.draw_line(right_line, fill_color="white")
             if self.has_bottom_wall:
                 bottom_line = Line(Point(x1, y2), Point(x2, y2))
                 self.__win.draw_line(bottom_line)
             else:
                 bottom_line = Line(Point(x1, y2), Point(x2, y2))
-                self.__win.draw_line(bottom_line, color="white")
+                self.__win.draw_line(bottom_line, fill_color="white")
         except Exception as e:
             print(f"error: {e}")
 

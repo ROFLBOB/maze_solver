@@ -40,7 +40,7 @@ class Maze():
             for j in range(self.num_rows):
                 self._draw_cell(i,j)
         
-        self._break_entrance_and_exit(self._cells)
+        self._break_entrance_and_exit()
         
     
     def _draw_cell(self,i,j):
@@ -61,15 +61,14 @@ class Maze():
         self.win.redraw()
         time.sleep(0.02)
 
-    def _break_entrance_and_exit(cells, self):
+    def _break_entrance_and_exit(self):
         #identiy the first and last cell
-        print(cells)
-        first_cell = cells[0][0]
-        last_cell = cells[self.num_cols][self.num_rows]
+        first_cell = self._cells[0][0]
+        last_cell = self._cells[self.num_cols-1][self.num_rows-1]
 
         #remove the top of the first cell and bottom of the last cell
         first_cell.has_top_wall = False
         self._draw_cell(0,0)
         last_cell.has_bottom_wall = False
-        self._draw_cell(self.num_cols,self.num_rows)
+        self._draw_cell(self.num_cols-1,self.num_rows-1)
         return
