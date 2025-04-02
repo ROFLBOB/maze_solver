@@ -30,6 +30,7 @@ class Maze():
             self._create_cells()
             self._break_entrance_and_exit()
             self._break_walls_r(0,0)
+            self._reset_cells_visited()
         except AttributeError as e:
             print(f"AttributeError: {e}")
     
@@ -128,3 +129,10 @@ class Maze():
 
             # recursively visit the next cell
             self._break_walls_r(next_index[0], next_index[1])
+
+    def _reset_cells_visited(self):
+            #loop through the _cells[]
+            for i in range(self.num_cols-1):
+                for j in range(self.num_rows-1):
+                    self._cells[i][j].visited = False
+                
