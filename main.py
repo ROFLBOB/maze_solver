@@ -12,6 +12,7 @@ def main():
     cell_size_x = (screen_x- 2 * margin)/ num_cols
     cell_size_y = (screen_y -2 * margin)/ num_rows
     maze = Maze(margin, margin, num_rows, num_cols, cell_size_x, cell_size_y, win, 10)
+    maze.solve()
 
     win.wait_for_close()
 
